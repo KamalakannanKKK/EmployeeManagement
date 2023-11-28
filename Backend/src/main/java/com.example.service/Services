@@ -1,0 +1,40 @@
+package com.example.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.Entity.AdminEntity;
+import com.example.Entity.Employee;
+import com.example.Repository.ERepository;
+
+@Service
+public class Services {
+
+	@Autowired
+	public ERepository EmpRepo;
+	
+	public List<Employee> getAllEmp(){
+		return this.EmpRepo.findAll();
+	}
+	
+	public Optional<Employee> findbyId(int id) {
+		return this.EmpRepo.findById(id);
+	}
+	
+	public Employee addEmp(Employee employee) {
+		return this.EmpRepo.save(employee);
+	}
+	public Employee FindEmployeeEmail(String emailid) {
+		return this.EmpRepo.findbyEmailId(emailid);
+	}
+	public Employee FindEmployeeEmailAndPassword(String Email,String Password) {
+		return this.EmpRepo.findbyEmailIdandPassword(Email,Password);
+	}
+	public Employee saveemployee(Employee employee) {
+		return this.EmpRepo.save(employee);
+	}
+	
+}
