@@ -1,0 +1,23 @@
+package com.example.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.Entity.AdminEntity;
+import com.example.Repository.AdminRepository;
+
+@Service
+public class AdminServices {
+@Autowired
+private AdminRepository AdminRepo;
+
+public AdminEntity saveadmin(AdminEntity admin) {
+	return this.AdminRepo.save(admin);
+}
+public AdminEntity FindAdminEmail(String emailid) {
+	return this.AdminRepo.findbyEmailId(emailid);
+}
+public AdminEntity FindAdminEmailAndPassword(String Email,String Password) {
+	return this.AdminRepo.findbyEmailIdandPassword(Email,Password);
+}
+}
