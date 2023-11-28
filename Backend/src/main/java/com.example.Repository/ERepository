@@ -1,0 +1,17 @@
+package com.example.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.example.Entity.AdminEntity;
+import com.example.Entity.Employee;
+
+@Repository
+public interface ERepository extends JpaRepository <Employee,Integer>{
+	@Query("SELECT pl From Employee pl WHERE pl.EmailId=?1")
+	Employee findbyEmailId(String emailid);
+	 @Query("SELECT pl From Employee pl WHERE pl.EmailId=?1 and pl.password=?2")
+	Employee findbyEmailIdandPassword(String email, String password);
+
+}
