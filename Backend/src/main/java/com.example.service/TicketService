@@ -1,0 +1,24 @@
+package com.example.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.Entity.Employee;
+import com.example.Entity.Ticket;
+import com.example.Repository.TicketRepository;
+@Service
+public class TicketService {
+	@Autowired
+	public TicketRepository ticketrepo;
+	public Ticket addticket(Ticket ticket) {
+		return this.ticketrepo.save(ticket);
+	}
+	public List<Ticket> getAllticket() {
+		return this.ticketrepo.findAll();
+	}
+	public List<Ticket> FindTicket(int eid) {
+		return this.ticketrepo.findbyEmpId(eid);
+	}
+}
