@@ -1,0 +1,85 @@
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+    EMPLOYEE MANAGEMENT
+  </a>
+  
+  
+</nav> 
+
+<div class="card my-0" style="padding-left: 300px;padding-right: 300px;padding-top:30px;padding-bottom: 30px;">
+  <div class="padding" style="padding-left:100px;padding-right:100px">
+  <h3 style="color:rgb(246, 252, 251);text-align: center;border-style: inset;border-radius: 30px;padding:10px;background-color: rgb(109, 107, 108);font-size: 30px;"><i class="bi bi-person-fill-up"></i>&nbsp;Edit Employee</h3>
+</div> <div class="card-body" style="background-image:linear-gradient(rgb(150, 147, 150),rgba(185, 183, 185, 0.781));border:2px solid black;border-radius: 30px;">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm" >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="employee.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your name"
+            required #name="ngModel">
+        </div>
+      
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" [(ngModel)]="employee.emailId" 
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address"
+            required email #email="ngModel" disabled>
+            <span class="text-danger"  *ngIf="email.errors?.email && email.touched">
+              Email Id is Invalid</span>
+          
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select [(ngModel)]="employee.gender" 
+            class="form-control" 
+            id="gender" 
+            name="gender" 
+            required #gender="ngModel">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          </select>
+          
+        </div>
+        <div class="form-group">
+          <label for="projectid">Project Id</label>
+          <input type="text" [(ngModel)]="employee.pid" 
+            class="form-control" 
+            id="projectid" 
+            name="projectid" 
+            placeholder="Enter Project Id"
+            required #projectid="ngModel">
+          
+        </div>
+        <div class="form-group">
+          <label for="projectname">Project Name</label>
+          <input type="text" [(ngModel)]="employee.pname" 
+            class="form-control" 
+            id="projectname" 
+            name="projectname" 
+            placeholder="Enter project Name"
+            required #projectname="ngModel">
+          
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <input type="text" [(ngModel)]="employee.role" 
+            class="form-control" 
+            id="role" 
+            name="role" 
+            placeholder="Enter Role of the EMPLOYEE"
+            required #role="ngModel">
+        </div>
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info"><i class="bi bi-person-check-fill"></i>&nbsp;Submit</button>&nbsp;
+          <button type="button" 
+          class="btn btn-danger btn-info" (click)="cancel()"><i class="bi bi-x-octagon-fill"></i>&nbsp;Cancel</button>
+      </form>
+    </div>
+  </div>
+  <app-footer></app-footer>
