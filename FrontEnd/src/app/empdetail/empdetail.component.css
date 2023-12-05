@@ -1,0 +1,54 @@
+.title{
+    float:left;
+ padding-right: 17px;
+}
+.padd{
+    padding-right: 200px;
+    padding-left: 20px;
+}
+.border{
+    border:3px solid black;
+}
+.table{
+    text-align: center;
+    width:60%;
+  
+}
+
+td:nth-child(odd), th:nth-child(odd) {
+    background-color: rgb(33, 63, 33);
+    color: rgb(247, 239, 239);
+    font-size:20px;
+    font-weight:bold;
+    width:200px;
+  }
+  td:nth-child(even), th:nth-child(even) {
+    background-color: #f5f8f8;
+    color: rgb(14, 12, 12);
+    font-size:15px;
+    font-weight:bold;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:bold;
+    animation: blink-animation 3s steps(15, start) infinite;
+    -webkit-animation: blink-animation 3s steps(15, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+      color:purple;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+        color:rgb(217, 255, 0);
+      visibility: hidden;
+    }
+  }
+  .card-body{
+    padding-left: 50px;
+    
+  }

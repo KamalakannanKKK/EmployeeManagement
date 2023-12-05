@@ -1,0 +1,90 @@
+
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+    EMPLOYEE MANAGEMENT
+  </a>
+  <br>
+  
+</nav> 
+<script type="text/javascript">
+  function preventBack(){
+   window.history.forward();}
+   setTimeout("preventBack()",0);
+   window.onunload=function(){null}
+  
+ </script>
+<div class="row">
+<nav class="nav-sidebar nav-bar-block col-sm-3" style="background-image:radial-gradient(rgb(73, 241, 241),rgb(192, 199, 250));">
+  <div class="bottom-border pb-3 text-center">
+    <img src="https://cdn0.iconfinder.com/data/icons/employee-and-business-fill/512/Office_Staff-1024.png" width="170px" style="padding-top:30px;padding-left: 10px;">
+  <h1 style="color:rgb(27, 26, 26);font-weight: bold;">&nbsp;&nbsp;EMPLOYEE</h1>
+  </div><br>
+   <div class="menu" style="text-align: justify;padding-left: 30px;padding-right: 30px;">
+    <button type="button" routerLink="/#" class="btn btn-block " style="text-align:center ;background-color:rgb(86, 158, 241);color:white" >Dashboard</button><br>
+   </div>
+    
+  
+<div class="u" style="padding-left: 30px;padding-right: 30px;">
+  <button type="button" routerLink="/passwordChange" class="btn btn-block " style="text-align:center ;" >Change Password</button><br>
+  <button type="button" routerLink="/ticketRaise" class="btn btn-block " style="text-align:center ;" >Raise Ticket</button><br>
+  <button type="button" routerLink="/empticket/{{employee.id}}" class="btn btn-block " style="text-align:center ;" >View Ticket</button><br>
+  <button type="button" class="btn btn-block " style="text-align:center ;background-color: red;color:white" (click)="logout()">Logout</button>
+</div></nav>
+<div class ="card-body col-sm-9" >
+ 
+<h2 style="color:rgb(7, 7, 7);font-size: 30px;font-style:initial;"><i class="bi bi-person-bounding-box"></i>&nbsp;Welcome {{employee.name}} !</h2>
+
+<div class="card my-5" style=" padding-left: 40px;padding-right:40px ;"><br>
+<div class="padd">
+  <div class="title" style="background-color: rgb(246, 246, 248);padding-left: 20px;border:2px solid rgb(7, 6, 6);">
+     <h3 style="text-align: left;color:rgb(11, 19, 19);font-size: 25px;font-weight: bolder;padding-top: 10px;">EMPLOYEE DETAIL</h3>
+    
+  </div></div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+     
+      <tbody style="font-weight:lighter;">
+        
+        <tr>
+          <td>Id</td>
+          <td>{{employee.id}}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>{{employee.name}}</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>{{employee.gender}}</td>
+        </tr>
+        <tr>
+          <td>EmailID</td>
+          <td>{{employee.emailId}}</td>
+        </tr>
+        <tr>
+          <td>Project Id</td>
+          <td>{{employee.pid}}</td>
+        </tr>
+        <tr>
+          <td>Project Name</td>
+          <td>{{employee.pname}}</td>
+        </tr>
+        <tr>
+          <td>Role</td>
+          <td>{{employee.role}}</td>
+        </tr>
+
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div></div>
+
+
+
+</div>
+<app-footer></app-footer>
