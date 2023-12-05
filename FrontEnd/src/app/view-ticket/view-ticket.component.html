@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="card my-5" style=" padding: top 20px;padding-left: 40px;padding-right:40px ;">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col" >Employee Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Issue</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of ticket">
+            <td>{{ticket.id}}</td>
+            <td>{{ticket.eid}}</td>
+            <td>{{ticket.name}}</td>
+            <td>{{ticket.issue}}</td>
+            <td>{{ticket.status}}</td>
+          
+          <td>
+            <button (click)="updateTicket(ticket.id)" class="btn btn-sm btn-primary" style="margin-left: 10px;">Update Status</button>
+            <button (click)="deleteTicket(ticket.id)" class="btn btn-sm btn-danger" style="margin-left: 10px;">&nbsp;Delete</button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
