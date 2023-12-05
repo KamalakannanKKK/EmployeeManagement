@@ -1,0 +1,60 @@
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+    EMPLOYEE MANAGEMENT
+  </a>
+  <br>
+  
+</nav>
+
+<section class="vh-100" style="padding-top :50px;padding-bottom :50px;padding-left:200px;padding-right: 200px;background-color: rgb(223, 253, 253);">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100" style="border: 5px solid black;border-radius: 30px;background-color: rgb(253, 251, 248);">
+        <div class="col-md-9 col-lg-5 col-xl-5">
+          <img src="https://th.bing.com/th?id=OIP.j64XQt15Os2nPr2dUT0IuQHaEA&w=340&h=183&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+            class="rounded" alt="Sample image" width="450px" height="400px">
+        </div>
+        <div class="col-md-8 col-lg-7 col-xl-4 offset-xl-1" style="padding-left: 50px;">
+          <form (ngSubmit)="loginEmployee(loginform)" #loginform="ngForm" >
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3" style="font-size: 30px;font-weight: bolder;color:rgb(10, 124, 115);padding-top: 30px;">Employee Login</p>
+            </div><br><br>
+  
+           
+            <div class="form-outline mb-4">
+              <label class="form-label" for="emailId"><h2><i class="bi bi-envelope-fill"></i>&nbsp;Email address</h2></label>
+              <input type="emailId" id="emailId" name="emailId" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" [(ngModel)]="employee.emailId" required email #emailId="ngModel"  />
+              <span class="text-danger" *ngIf="emailId.errors?.email && emailId.touched">Email Id is Invalid</span>
+               </div>
+  
+            
+            <div class="form-outline mb-3">
+              <label class="form-label" for="password"><h2><i class="bi bi-eye-slash-fill"></i>&nbsp;Password</h2></label>
+              <input type="password" id="password" name="password" class="form-control form-control-lg"
+                placeholder="Enter password"  [(ngModel)]="employee.password" required />
+             
+            </div>
+  
+           
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="!loginform.form.valid"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0"> <a href="/adminLogin"
+                    class="link-danger" ><i class="bi bi-person-fill-gear"></i>&nbsp;SignIn as Admin</a>&nbsp;&nbsp;
+                    <a href="/fpassword"
+                    class="link-danger" style="color:red"><i class="bi bi-person-fill-exclamation"></i>&nbsp;Forgot Password</a></p>
+                   
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/employeesignup"
+                  class="link-danger"><i class="bi bi-person-fill-x"></i>&nbsp;Register</a>
+                 
+                  
+            </div><br><br><br>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
