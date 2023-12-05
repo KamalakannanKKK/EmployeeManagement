@@ -1,0 +1,23 @@
+.row{
+    overflow-x:auto;
+    border:3px solid gold;
+    box-shadow: 0 0 50px 0 gold;
+   border-radius:30px;
+}
+.box{
+    padding-top: 50px;
+    padding-bottom: 110px;
+}
+
+.col-sm-5{
+
+    background-size: cover;
+    background-image: url(https://th.bing.com/th/id/OIP.OASLaj97zCdo8ULXZIrp5gHaHT?rs=1&pid=ImgDetMain)
+}
+
+input{
+ border: none;   
+ border-bottom: 1px solid black;
+ background: transparent;
+}
+
