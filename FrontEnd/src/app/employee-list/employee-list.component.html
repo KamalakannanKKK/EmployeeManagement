@@ -1,0 +1,51 @@
+import { Component } from '@angular/core';
+import { EMployee } from '../employee';
+import { EmployeeService } from '../employee.service';
+import {FormGroup,FormBuilder,Validators} from'@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+@Component({
+  selector: 'app-employee-list',
+  templateUrl: './employee-list.component.html',
+  styleUrls: ['./employee-list.component.css']
+})
+export class EmployeeListComponent {
+  empfromlabel='update Employee';
+  editformbtn='update';
+  EMployee: EMployee[];
+  emp:EMployee=new EMployee();
+  id:Number;
+  editForm:FormGroup
+  deleteMessage=false;  
+  constructor(private formBuilder:FormBuilder,private empservice:EmployeeService,public router:Router,private route:ActivatedRoute) {
+    
+  }
+
+  ngOnInit() {
+   
+    this.empservice.GetEmployee().subscribe(data => {
+      this.EMployee = data;
+      console.log("sucess");
+      console.log(this.EMployee)
+
+    });
+   
+  }
+
+updateEmployee(id:Number){
+  console.log(id);
+  this.router.navigate(['updateEmp', id]);
+    
+  }
+
+  
+  deleteEmployee(id: Number) {
+    this.empservice.deleteEmployee(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.ngOnInit();
+        },
+        error => console.log(error));
+  }
+
+  }
