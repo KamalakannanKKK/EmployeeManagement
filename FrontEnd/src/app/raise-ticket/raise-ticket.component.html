@@ -1,0 +1,69 @@
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+    EMPLOYEE MANAGEMENT
+  </a>
+  <br>
+  
+</nav> <br><div class="kl" style="padding-left:500px;padding-right: 500px;">
+<h1 style="text-align:center;border-style: inset;align-items: center;border-color: black;color:rgb(218, 191, 70);font-size: 30px;font-weight: bolder;padding:10px"><i class="bi bi-ticket-perforated-fill"></i>&nbsp;Raise Ticket</h1>
+</div><section class="vh-100" >
+    <div class="container h-100" style="padding-left:150px;padding-right:150px;">
+      <div class="row d-flex justify-content-center align-items-center h-100" >
+        <div class="col-lg-12 col-xl-11">
+          <br><div class="card text-black" style="border-radius: 25px;"style="background-image: linear-gradient(to right,rgb(230, 170, 170),rgb(156, 156, 233),rgb(183, 241, 183));border:5px solid black;border-radius:30px">
+           <br>
+          
+  
+                 
+                  <form class="mx-1 mx-md-4" (ngSubmit)="RTicket(ticketform)" #ticketform="ngForm">
+                    <div class="form-group row">
+                      <label for="eid" class="col-sm-2 col-form-label"><h2><i class="bi bi-person-vcard-fill"></i>&nbsp;Id</h2></label>
+                      <div class="col-sm-10">
+                        <input input type="Id" #Id="ngModel" id="Id" name="Id" class="form-control form-control-lg"
+                          placeholder="{{employee.id}}" [(ngModel)]="ticket.eid" value="{{employee.id}}"  readonly="true"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="name" class="col-sm-2 col-form-label"><h2><i class="bi bi-person-video"></i>&nbsp;Name</h2></label>
+                      <div class="col-sm-10">
+                        <input input type="name" id="name" name="name"  class="form-control form-control-lg"
+                        placeholder="Enter Name" #name="ngModel" [(ngModel)]="ticket.name" required [class.is-valid]="name.invalid && name.touched"/>
+                       <small class="text-danger" [class.d-none]="name.valid || name.untouched">
+                        Name is Required Field</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="issue" class="col-sm-2 col-form-label"><h2><i class="bi bi-question-octagon-fill"></i>&nbsp;issue</h2></label>
+                      <div class="col-sm-10">
+                        <input input type="issue" #issue="ngModel" id="issue" name="issue" class="form-control form-control-lg"
+                          placeholder="Enter Your Issue" [(ngModel)]="ticket.issue" required [class.is-invalid]="issue.invalid && issue.touched" />
+                         <small text-danger [class.d-none]="issue.valid || issue.untouched"></small>
+                        
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="status" class="col-sm-2 col-form-label"><h2><i class="bi bi-info-circle"></i>&nbsp;Status</h2></label>
+                      <div class="col-sm-10">
+                        <input input type="status" #status="ngModel" id="status" name="status" class="form-control form-control-lg"
+                          placeholder="Open" [(ngModel)]="ticket.status" value="Open"  readonly="true"/>
+                         
+                        </div>
+                    </div>
+                
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!ticketform.form.valid"><i class="bi bi-file-earmark-check-fill"></i>&nbsp;Submit Issue</button>&nbsp;
+                      <button type="button" (click)="cancel()" class="btn btn-danger btn-lg"><i class="bi bi-x-octagon-fill"></i>&nbsp;Cancel</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+              
+              </div>
+            </div>
+          </div>
+       
+  </section><br>
+  <app-footer></app-footer>
