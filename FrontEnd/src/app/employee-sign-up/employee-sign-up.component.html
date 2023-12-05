@@ -1,0 +1,104 @@
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+    EMPLOYEE MANAGEMENT
+  </a>
+  <br>
+  
+</nav>
+<section class="vh-100" style="background-color: #eee;padding-top: 30px;padding-bottom: 10px;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;background-color: rgb(249, 251, 252);border:2px solid black">
+            <div class="heading">
+            <h1 style="text-align:center;font-size: 40px;padding:10px;color:rgb(128, 128, 187);text-shadow: 2px 2px black; border:2px solid rgb(15, 15, 15);background-color: rgb(233, 230, 230);
+            border-style: groove;"><i class="bi bi-person-fill"></i>&nbsp;Employee Registration</h1></div>
+            <div class="card-body p-md-5">
+              <div style="float:left;padding-left: 30px;">
+  
+                <img src="https://brightsparks.com.sg/profile/iras/images/scholarship-img3.jpg"
+                  class="img-fluid" alt="Sample image" style="width: 400px;height:500px;border-radius: 30px;">
+
+              </div>
+              <div class="row justify-content-center">
+                <div style="float: right;padding-left: 100px;">
+  
+                 
+                  <form class="mx-1 mx-0 md-4" (ngSubmit)="signupEmployee(signupform)" #signupform="ngForm">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label"><i class="bi bi-person-video"></i>&nbsp;Name</label>
+                        <input input type="name" id="name" name="name"  class="form-control form-control-lg"
+                        placeholder="Enter Name" #name="ngModel" [(ngModel)]="employee.name" required [class.is-valid]="name.invalid && name.touched"/>
+                       <small class="text-danger" [class.d-none]="name.valid || name.untouched">
+                        Name is Required Field</small>
+                       
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label"><i class="bi bi-envelope-fill"></i>&nbsp;EmailId</label>
+                          <input input type="emailId" #emailId="ngModel" id="emailId" name="emailId" class="form-control form-control-lg"
+                          placeholder="Enter Email ID" [(ngModel)]="employee.emailId"  required pattern=".+@gmail\.com" email [class.is-invalid]="emailId.invalid && emailId.touched" 
+                          />
+                         <span class="text-danger"  [class.d-none]="emailId.valid || emailId.untouched">Email Id Required</span>
+
+                  
+                          <span class="text-danger"  *ngIf="(emailId.errors?.pattern  ||emailId.errors?.email) && emailId.touched ">
+                            Enter valid EmailId</span>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label"><i class="bi bi-gender-ambiguous"></i>&nbsp;Gender</label>
+                          <select #gender="ngModel" id="gender" name="gender" class="form-control form-control-lg"
+                           [(ngModel)]="employee.gender" required [class.is-invalid]="gender.invalid && gender.touched" width="200px">
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
+                         <small text-danger [class.d-none]="gender.valid || gender.untouched"></small>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0"> <label class="form-label"><i class="bi bi-eye-slash"></i>&nbsp;Password</label>
+                          <input input type="password" id="password" name="password" class="form-control form-control-lg"
+                          placeholder="Enter Password" #password="ngModel"[(ngModel)]="employee.password" required [class.is-invalid]="password.invalid || password.untouched" />
+                        <small class="text-danger"[class.d-none]="password.valid || password.untouched">Password is required field</small>
+                        </div>
+                      </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="cpassword"><i class="bi bi-eye-slash-fill"></i>&nbsp;Conform Password</label>
+                        <input  class="form-control form-control-lg" type="password" #cpassword="ngModel" placeholder="Confirm Password" id="cpassword" name="cpassword" [(ngModel)]="employee.password" required [class.is-invalid]=" cpassword.invalid && cpassword.untouched"/>
+                        <small class="text-danger" [class.d-none]="(cpassword.value!==password.value) || cpassword.untouched">Password and Confirm Password Should be Same</small>
+                      </div>
+                    </div>
+                    
+  
+                    <div class="d-flex justify-content-center mx-1 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!signupform.form.valid"><i class="bi bi-person-plus-fill"></i>&nbsp;Register</button>
+                     &nbsp; <button type="button" (click)="cancel()" class="btn btn-danger btn-lg" style="padding-left:30px;"><i class="bi bi-x-octagon-fill"></i>&nbsp;Cancel</button>
+                   
+                    </div>
+  
+                  </form>
+  
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
