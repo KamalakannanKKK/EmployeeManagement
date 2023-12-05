@@ -1,0 +1,107 @@
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+    EMPLOYEE MANAGEMENT
+  </a>
+</nav>
+
+<div class="card"><div style="padding-top: 30px;padding-left: 450px;padding-right: 450px;">
+        <h1 style="color:rgb(247, 243, 243) ;text-align: center;font-size: 40px;padding:10px; border:2px solid white">ADD EMPLOYEE</h1>
+    </div> 
+    <div class="body" style="padding-left: 340px;padding-right:340px;padding-top: 30px;padding-bottom: 30px;">
+    
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" style="border: 3px solid rgb(250, 248, 248);border-radius: 30px; background-size: 900px 910px;background-repeat: no-repeat;background-position: center;padding: 30px;" >
+        
+      <div class="form-group row">
+          <div class="col-sm-3">
+          <label for="name" style="font-weight: 500;font-size: 20px;float:right"><i class="bi bi-person-video"></i>&nbsp;Name</label>
+        </div><div class="col-sm-9"> <input type="text" [(ngModel)]="employee.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your name"
+            required #name="ngModel" ><small class="text-danger">Name is Required Field</small></div>
+        </div>
+        
+        <div class="form-group row">
+           <div class="col-sm-3">
+          <label for="email"  style="font-weight: 500;font-size: 20px;float:right"><i class="bi bi-envelope-fill"></i>&nbsp;Email</label></div>
+         <div class="col-sm-9"> <input type="text" [(ngModel)]="employee.emailId" 
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address"
+            [class.has-error]="email.invalid && email.touched" pattern=".+@gmail\.com"
+            required email #email="ngModel">
+          <span class="text-danger"  *ngIf="email.errors?.required && email.touched">
+            Email Id is Required Field</span>
+            <span class="text-danger"  *ngIf="(email.errors?.pattern  ||email.errors?.email) && email.touched ">
+              Enter valid EmailId</span>
+          </div>
+        </div>
+        <div class="form-group row">
+         <div class="col-sm-3"><label for="gender"  style="font-weight: 500;font-size: 20px;float:right"><i class="bi bi-gender-ambiguous"></i>&nbsp;Gender</label>
+         </div> <div class="col-sm-9">
+          <select [(ngModel)]="employee.gender" 
+          class="form-control" 
+          id="gender" 
+          name="gender" required #gender="ngModel" style="color:rgb(167, 165, 165);" >
+            <option value="Male"   >Male</option>
+            <option value="Female" >Female</option>
+          </select>
+            <small class="text-danger" >
+              Gender is Required Field</small></div>
+        </div>
+        <div class="form-group row"><div class="col-sm-3">
+          <label for="projectid"  style="font-weight: 500;font-size: 20px;float:right"><i class="bi bi-person-video2"></i>&nbsp;Project Id</label>
+        </div><div class="col-sm-9"><input type="text" [(ngModel)]="employee.pid" 
+            class="form-control" 
+            id="projectid" 
+            name="projectid" 
+            placeholder="Enter Project Id"
+            required #projectid="ngModel">
+            <small class="text-danger" >
+              Project Id is Required Field</small></div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-3"><label for="projectname"  style="font-weight: 500;font-size: 20px;float:right">Project Name</label>
+          </div><div class="col-sm-9"><input type="text" [(ngModel)]="employee.pname" 
+            class="form-control" 
+            id="projectname" 
+            name="projectname" 
+            placeholder="Enter project Name"
+            required #projectname="ngModel">
+            <small class="text-danger" >
+            Project Name  Name is Required Field</small></div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-3">
+          <label for="role"  style="font-weight:500;font-size: 20px;float:right"><i class="bi bi-r-circle-fill"></i>&nbsp;Role</label></div>
+          <div class="col-sm-9"><input type="text" [(ngModel)]="employee.role" 
+            class="form-control" 
+            id="role" 
+            name="role" 
+            placeholder="Enter Role of the EMPLOYEE"
+            required #role="ngModel"></div> 
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-3">
+          <label for="password"  style="font-weight:500;font-size: 20px;float:right"><i class="bi bi-eye-slash-fill"></i>&nbsp;Password</label>
+        </div><div class="col-sm-9"><input type="text" [(ngModel)]="employee.password" 
+            class="form-control" 
+            id="password" 
+            name="password" 
+            placeholder="Enter Password "
+            required minlength="5" #role="ngModel" style="color: white;">
+            <small class="text-danger">password will change by employee afterwards</small>
+        </div></div>
+        <div class="shift" style="padding-left: 250px;">
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info"><i class="bi bi-patch-check-fill"></i>&nbsp;Submit</button>&nbsp;
+          <button type="button" 
+          class="btn btn-danger" (click)="cancel()"><i class="bi bi-x-octagon-fill"></i>&nbsp;Cancel</button><br></div>
+      </form></div>
+    
+  </div>
+  <app-footer></app-footer>
+  

@@ -1,0 +1,34 @@
+.card{
+    background-image: url(https://bitlaunch.io/blog/content/images/size/w1000/2021/09/wesley-tingey-mvLyHPRGLCs-unsplash.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form{
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+}
+.col-sm-9 input{
+    background: transparent;
+    color:white;
+}
+.col-sm-9 select{
+    background: transparent;
+}
+option{
+    background-color:transparent;
+}
+.col-sm-3 label{
+    color:white
+}
+ ::placeholder{
+    color:white
+}
+.card h1{
+    text-shadow: 4px 4px purple;
+}
+.text-danger{
+    text-shadow: 1px 1px rgb(24, 23, 23);
+}
+.text{
+    color:white;
+}
