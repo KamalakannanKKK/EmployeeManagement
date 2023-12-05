@@ -1,0 +1,25 @@
+.form-label:after {
+    font-weight: bold;
+    content:" *";
+    color: red;
+  }
+  .form-label{
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .heading{
+    padding-top:30px;
+    padding-left: 330px;
+    padding-right: 330px;
+   
+ }
+ h1{
+    background-color: rgb(250, 220, 220);
+    text-shadow: 1px 1px white;
+ }
+ input{
+    width:400px
+ }
+ img{
+    padding-right: 60px;
+ }
