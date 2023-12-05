@@ -1,0 +1,29 @@
+table{
+    align-items: center;
+    
+}
+.content{
+    border:3px solid rgb(100, 243, 87);
+    border-style: inset;
+    border-radius: 20px;
+    padding-top:15px;
+    text-align: center;
+    font-size: 30px;
+    background-color:rgb(17, 17, 17);
+}
+.title{
+    padding-left: 470px;
+    padding-right: 470px;
+    padding-bottom: 40px;
+    
+}
+h2{
+    font-size: 30px;
+    color:rgb(247, 240, 240);
+    font-weight: bolder;
+   
+}
+.whole{
+    padding-top: 30px;
+    padding-bottom: 150px;
+}

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-light bg-light" class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <img src="https://th.bing.com/th?id=OIP.d2Uoy0yTEnk6ZaVKNtTUGQHaEz&w=310&h=201&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30" height="30" class="d-inline-block align-top" alt="">
+      EMPLOYEE MANAGEMENT
+    </a>
+    <br>
+    
+  </nav> 
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <ul class="text-center list-inline py-3">
+          
+          <li class="list-inline-item">
+            <a routerLink="/empdetail" class="btn btn-primary">Back</a>
+          </li>
+        </ul>
+  
+      </ul>
+    </div>
+  
+    <button type="button" class="btn btn-danger " style="text-align:center ;" (click)="logout()">Logout</button>
+  </nav>
+  <div class="whole">
+  <div class="title">
+    <div class="content">
+    <h2><i class="bi bi-ticket-perforated"></i>&nbsp;Raised Ticket</h2></div>
+  </div>
+  <div class="body"  style=" padding: top 20px;padding-left: 250px;padding-right:250px ;">
+<div class="card ">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Ticket Id</th>
+            <th scope="col" >Employee Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Issue</th>
+            <th scope="col">Status</th>
+            
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of ticket">
+            <td>{{ticket.id}}</td>
+            <td>{{ticket.eid}}</td>
+            <td>{{ticket.name}}</td>
+            <td>{{ticket.issue}}</td>
+            <td>{{ticket.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>
